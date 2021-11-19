@@ -10,7 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DACN">
         <activity
+            android:name=".DangKy"
+            android:exported="true" />
+        <activity
+            android:name=".DangNhap"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SendOTP"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
