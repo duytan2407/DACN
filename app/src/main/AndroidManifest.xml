@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DACN">
         <activity
+            android:name=".TrangChu"
+            android:exported="true" />
+        <activity
+            android:name=".DangNhap"
+            android:exported="true" />
+        <activity
+            android:name=".DangKy"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
