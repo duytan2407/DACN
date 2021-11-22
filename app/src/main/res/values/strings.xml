@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">DACN</string>
+    <string name="_84">+84-</string>
+    <string name="_123456789">123456789</string>
+    <string name="g_i_l_i_otp">Gửi Lại OTP</string>
+    <string name="get_otp">Get OTP</string>
+    <string name="g_i">Gửi</string>
+    <string name="kh_ng_nh_n_c_m">Không Nhận Được Mã?</string>
 </resources>
