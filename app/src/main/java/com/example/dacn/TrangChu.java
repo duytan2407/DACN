@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import com.example.androiddoan.Api.Model.NguoiDungModel;
-
 public class TrangChu extends AppCompatActivity {
 
     @Override
