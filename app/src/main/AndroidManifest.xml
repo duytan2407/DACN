@@ -10,8 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DACN">
         <activity
-            android:name=".ListBac"
-            android:exported="true" />
+            android:name=".DonHang"
+            android:exported="false" />
+        <activity
+            android:name=".Contact"
+            android:exported="false" />
         <activity
             android:name=".MonAn"
             android:exported="true" />
