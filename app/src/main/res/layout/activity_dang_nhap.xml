@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/hinhnen"
     tools:context=".DangNhap">
 
     <TextView
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/abril_fatface"
         android:text="Đăng Nhập"
-        android:textColor="@color/white"
+        android:textColor="@color/orange"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,7 +38,7 @@
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
         android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/orange"
         app:layout_constraintEnd_toEndOf="@+id/inputEmail"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/inputEmail"
@@ -61,7 +62,7 @@
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
         android:textColor="@color/white"
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/orange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Bạn Quên Mật Khẩu ?"
-        android:textColor="@color/white"
+        android:textColor="@color/orange"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/inputPassword"
@@ -82,6 +83,7 @@
     <Button
         android:id="@+id/btnlogin"
         android:layout_width="0dp"
+
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:background="@drawable/btn_bg"
@@ -107,14 +109,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bạn Chưa Có Tài Khoản?"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/textViewSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Đăng Ký"
-            android:textColor="@color/colorRed" />
+            android:textColor="#971515"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -145,7 +149,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/btn_bg"
-        android:drawableStart="@drawable/ic_facebook"
+        android:drawableLeft="@drawable/ic_facebook"
         android:drawablePadding="10dp"
         android:paddingLeft="20dp"
         android:text="Facebook"
