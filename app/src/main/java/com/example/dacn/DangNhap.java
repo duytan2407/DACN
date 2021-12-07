@@ -4,9 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+
+import java.util.List;
 
 public class DangNhap extends AppCompatActivity {
-
+    private EditText edtMail, edtPassword;
+    private Button btnregister , btnlogin;
+//    private List<NguoiDungModel> mListUser;
+//    private  NguoiDungModel mUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
