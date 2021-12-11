@@ -1,0 +1,118 @@
+package com.example.dacn.models;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
+
+import java.io.Serializable;
+import java.util.Objects;
+
+public class Food implements Serializable {
+    private String TenMonAn;
+
+    private Boolean TinhTrang;
+
+    private String TTChiTiet;
+
+    private String id;
+
+    private String HinhAnh;
+
+    private Double Gia;
+
+    public Food() {
+    }
+
+    public Food(String tenMonAn, Boolean tinhTrang, String TTChiTiet, String id, String hinhAnh, Double gia) {
+        this.TenMonAn = tenMonAn;
+        this.TinhTrang = tinhTrang;
+        this.TTChiTiet = TTChiTiet;
+        this.id = id;
+        this.HinhAnh = hinhAnh;
+        this.Gia = gia;
+    }
+
+    public String getTenMonAn ()
+    {
+        return TenMonAn;
+    }
+
+    public void setTenMonAn (String TenMonAn)
+    {
+        this.TenMonAn = TenMonAn;
+    }
+
+
+    public String getTTChiTiet ()
+    {
+        return TTChiTiet;
+    }
+
+    public void setTTChiTiet (String TTChiTiet)
+    {
+        this.TTChiTiet = TTChiTiet;
+    }
+
+    public String getId ()
+    {
+        return id;
+    }
+
+    public void setId (String id)
+    {
+        this.id = id;
+    }
+
+    public String getHinhAnh ()
+    {
+        return HinhAnh;
+    }
+
+    public void setHinhAnh (String HinhAnh)
+    {
+        this.HinhAnh = HinhAnh;
+    }
+
+    public Boolean getTinhTrang() {
+        return TinhTrang;
+    }
+
+    public void setTinhTrang(Boolean tinhTrang) {
+        TinhTrang = tinhTrang;
+    }
+
+    public Double getGia() {
+        return Gia;
+    }
+
+    public void setGia(Double gia) {
+        Gia = gia;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "ClassPojo [TenMonAn = "+TenMonAn+", TinhTrang = "+TinhTrang+", TTChiTiet = "+TTChiTiet+", id = "+id+", HinhAnh = "+HinhAnh+", Gia = "+Gia+"]";
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Food food = (Food) o;
+        return getTenMonAn().equals(food.getTenMonAn()) && getTinhTrang().equals(food.getTinhTrang()) && getTTChiTiet().equals(food.getTTChiTiet()) && getId().equals(food.getId()) && getHinhAnh().equals(food.getHinhAnh()) && getGia().equals(food.getGia());
+    }
+
+    public static DiffUtil.ItemCallback<Food> itemCallback = new DiffUtil.ItemCallback<Food>() {
+        @Override
+        public boolean areItemsTheSame(@NonNull Food oldItem, @NonNull Food newItem) {
+            return oldItem.getId().equals(newItem.getId());
+        }
+
+        @Override
+        public boolean areContentsTheSame(@NonNull Food oldItem, @NonNull Food newItem) {
+            return oldItem.equals(newItem);
+        }
+    };
+}
+

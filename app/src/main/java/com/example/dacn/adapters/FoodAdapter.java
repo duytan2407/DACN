@@ -1,4 +1,4 @@
-package com.example.dacn.Adapter;
+package com.example.dacn.adapters;
 
 
 import android.app.Activity;
