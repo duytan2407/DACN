@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,11 +16,15 @@ import com.example.dacn.R;
 import com.example.dacn.adapters.ShopListAdapter;
 import com.example.dacn.databinding.FragmentShopBinding;
 import com.example.dacn.models.Food;
+import com.example.dacn.viewmodels.ShopViewModel;
+
+import java.util.List;
 
 public class ShopFragment extends Fragment implements ShopListAdapter.ShopInterface{
 
     FragmentShopBinding fragmentShopBinding;
     private ShopListAdapter shopListAdapter;
+    public ShopViewModel shopViewModel;
 
     public ShopFragment() {
         // Required empty public constructor
@@ -37,6 +43,13 @@ public class ShopFragment extends Fragment implements ShopListAdapter.ShopInterf
         shopListAdapter = new ShopListAdapter();
         fragmentShopBinding.shopRecyclerView.setAdapter(shopListAdapter);
 
+        shopViewModel = new ViewModelProvider(requireActivity()).get(ShopViewModel.class);
+        shopViewModel.getFoods().observe(getViewLifecycleOwner(), new Observer<List<Food>>() {
+            @Override
+            public void onChanged(List<Food> foods) {
+                shopListAdapter.submitList(foods);
+            }
+        });
     }
 
     @Override

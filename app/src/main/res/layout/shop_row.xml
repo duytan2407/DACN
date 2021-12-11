@@ -33,7 +33,7 @@
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 android:layout_marginLeft="5dp"
-
+                android:foodImage="@{food.hinhAnh}"
                 tools:srcCompat="@tools:sample/avatars"
                 />
 
@@ -68,9 +68,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="0dp"
-                    android:text="@{food.tinhTrang ? `` : `Đã hết`}"
+                    android:text="@{String.valueOf(food.tinhTrang)}"
+
                     android:textColor="@color/black"
                     android:textSize="15dp" />
+<!--                ? `` : `Đã hết`}"-->
 
                 <Button
                     android:id="@+id/addToCartButton"
@@ -80,9 +82,10 @@
                     android:layout_marginTop="5dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:enabled="@{food.tinhTrang}"
+
                     android:fontFamily="@font/alfa_slab_one"
                     android:text="+ Quấtt" />
+                <!--                    android:enabled="@{food.tinhTrang}"-->
             </LinearLayout>
 
         </LinearLayout>

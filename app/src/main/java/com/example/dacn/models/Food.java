@@ -1,7 +1,12 @@
 package com.example.dacn.models;
 
+import android.widget.ImageView;
+
 import androidx.annotation.NonNull;
+import androidx.databinding.BindingAdapter;
 import androidx.recyclerview.widget.DiffUtil;
+
+import com.bumptech.glide.Glide;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -9,7 +14,7 @@ import java.util.Objects;
 public class Food implements Serializable {
     private String TenMonAn;
 
-    private Boolean TinhTrang;
+    private Integer TinhTrang;
 
     private String TTChiTiet;
 
@@ -22,7 +27,7 @@ public class Food implements Serializable {
     public Food() {
     }
 
-    public Food(String tenMonAn, Boolean tinhTrang, String TTChiTiet, String id, String hinhAnh, Double gia) {
+    public Food(String tenMonAn, Integer tinhTrang, String TTChiTiet, String id, String hinhAnh, Double gia) {
         this.TenMonAn = tenMonAn;
         this.TinhTrang = tinhTrang;
         this.TTChiTiet = TTChiTiet;
@@ -72,11 +77,11 @@ public class Food implements Serializable {
         this.HinhAnh = HinhAnh;
     }
 
-    public Boolean getTinhTrang() {
+    public Integer getTinhTrang() {
         return TinhTrang;
     }
 
-    public void setTinhTrang(Boolean tinhTrang) {
+    public void setTinhTrang(Integer tinhTrang) {
         TinhTrang = tinhTrang;
     }
 
@@ -114,5 +119,13 @@ public class Food implements Serializable {
             return oldItem.equals(newItem);
         }
     };
+
+    @BindingAdapter("android:foodImage")
+    public static  void loadImage(ImageView imageView, String imageURL ){
+        Glide.with(imageView)
+                .load(imageURL)
+                .fitCenter()
+                .into(imageView);
+    }
 }
 
