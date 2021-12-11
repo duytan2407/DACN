@@ -7,7 +7,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,10 +24,11 @@ import com.example.dacn.viewmodels.ShopViewModel;
 import java.util.List;
 
 public class ShopFragment extends Fragment implements ShopListAdapter.ShopInterface{
-
+    private static final String TAG = "ShopFragment";
     FragmentShopBinding fragmentShopBinding;
     private ShopListAdapter shopListAdapter;
     public ShopViewModel shopViewModel;
+    public NavController navController;
 
     public ShopFragment() {
         // Required empty public constructor
@@ -40,7 +44,7 @@ public class ShopFragment extends Fragment implements ShopListAdapter.ShopInterf
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        shopListAdapter = new ShopListAdapter();
+        shopListAdapter = new ShopListAdapter(this);
         fragmentShopBinding.shopRecyclerView.setAdapter(shopListAdapter);
 
         shopViewModel = new ViewModelProvider(requireActivity()).get(ShopViewModel.class);
@@ -50,6 +54,7 @@ public class ShopFragment extends Fragment implements ShopListAdapter.ShopInterf
                 shopListAdapter.submitList(foods);
             }
         });
+        navController = Navigation.findNavController(view);
     }
 
     @Override
@@ -59,6 +64,8 @@ public class ShopFragment extends Fragment implements ShopListAdapter.ShopInterf
 
     @Override
     public void onItemClick(Food food) {
-
+//        Log.d(TAG, "onItemClick: " + food.toString());
+        shopViewModel.setFood(food);
+        navController.navigate(R.id.action_shopFragment_to_detailFragment);
     }
 }

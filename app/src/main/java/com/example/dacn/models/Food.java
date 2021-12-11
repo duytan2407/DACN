@@ -127,5 +127,6 @@ public class Food implements Serializable {
                 .fitCenter()
                 .into(imageView);
     }
+
 }
 

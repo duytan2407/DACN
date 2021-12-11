@@ -14,8 +14,10 @@ import com.example.dacn.models.Food;
 
 public class ShopListAdapter extends ListAdapter<Food, ShopListAdapter.ShopViewHolder> {
 
-    public ShopListAdapter() {
+    ShopInterface shopInterface;
+    public ShopListAdapter(ShopInterface shopInterface) {
         super(Food.itemCallback);
+        this.shopInterface = shopInterface;
     }
 
     @NonNull
@@ -23,6 +25,8 @@ public class ShopListAdapter extends ListAdapter<Food, ShopListAdapter.ShopViewH
     public ShopViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         ShopRowBinding shopRowBinding = ShopRowBinding.inflate(layoutInflater, parent, false);
+        shopRowBinding.setShopInterface(shopInterface);
+
         return new ShopViewHolder(shopRowBinding);
     }
 
@@ -39,6 +43,8 @@ public class ShopListAdapter extends ListAdapter<Food, ShopListAdapter.ShopViewH
         public ShopViewHolder(ShopRowBinding binding) {
             super(binding.getRoot());
             this.shopRowBinding = binding;
+
+
         }
     }
 

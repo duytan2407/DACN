@@ -24,7 +24,7 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.dacn.views.DetailFragment"
-        android:label="Chi tiết"
+        android:label="Chi tiết món"
         tools:layout="@layout/fragment_detail">
         <action
             android:id="@+id/action_detailFragment_to_cartFragment"
