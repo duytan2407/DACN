@@ -20,6 +20,7 @@ import com.example.dacn.adapters.ShopListAdapter;
 import com.example.dacn.databinding.FragmentShopBinding;
 import com.example.dacn.models.Food;
 import com.example.dacn.viewmodels.ShopViewModel;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -62,6 +63,20 @@ public class ShopFragment extends Fragment implements ShopListAdapter.ShopInterf
 //        Log.d(TAG, "add: " + food.toString());
 //        Log.d(TAG, "addItem: " + food.getTenMonAn() + isAdded());
         boolean isAdded = shopViewModel.addItemToCart(food);
+        if(isAdded){
+            Snackbar.make(requireView(), food.getTenMonAn() + " được thêm vào giỏ", Snackbar.LENGTH_LONG)
+                    .setAction("Giỏ hàng", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            navController.navigate(R.id.action_shopFragment_to_cartFragment);
+                        }
+                    })
+                    .show();
+
+        }else{
+            Snackbar.make(requireView(), "Sản phẩm đã đạt số lượng tối đa!!!", Snackbar.LENGTH_LONG)
+                    .show();
+        }
     }
 
     @Override

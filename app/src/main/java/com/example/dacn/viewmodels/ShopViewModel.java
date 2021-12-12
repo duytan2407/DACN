@@ -37,4 +37,20 @@ public class ShopViewModel extends ViewModel {
     public boolean addItemToCart(Food food){
         return cartRepo.addItemToCart(food);
     }
+
+    public void removeItemFromCart(CartItem cartItem){
+        cartRepo.removeItemFromCart(cartItem);
+    }
+
+    public void changeQuantity(CartItem cartItem, int quantity){
+        cartRepo.changeQuantity(cartItem, quantity);
+    }
+
+    public LiveData<Double> getTotalPrice(){
+        return cartRepo.getTotalPrice();
+    }
+
+    public void resetCart(){
+        cartRepo.initCart();
+    }
 }

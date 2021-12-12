@@ -7,6 +7,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DividerItemDecoration;
 
 import android.view.LayoutInflater;
@@ -22,10 +24,11 @@ import com.example.dacn.viewmodels.ShopViewModel;
 import java.util.List;
 
 
-public class CartFragment extends Fragment {
+public class CartFragment extends Fragment implements CartListAdapter.CartInterface {
 
     ShopViewModel shopViewModel;
     FragmentCartBinding fragmentCartBinding;
+    NavController navController;
 
     public CartFragment() {
         // Required empty public constructor
@@ -42,8 +45,8 @@ public class CartFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        CartListAdapter cartListAdapter = new CartListAdapter();
+        navController = Navigation.findNavController(view);
+        final CartListAdapter cartListAdapter = new CartListAdapter(this);
 
         fragmentCartBinding.cartRecyclerView.setAdapter(cartListAdapter);
         fragmentCartBinding.cartRecyclerView.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
@@ -56,5 +59,28 @@ public class CartFragment extends Fragment {
                 fragmentCartBinding.placeOrderButton.setEnabled(cartItems.size() > 0);
             }
         });
+        shopViewModel.getTotalPrice().observe(getViewLifecycleOwner(), new Observer<Double>() {
+            @Override
+            public void onChanged(Double aDouble) {
+                fragmentCartBinding.orderTotalTextView.setText(aDouble.toString());
+            }
+        });
+
+        fragmentCartBinding.placeOrderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_cartFragment_to_paymentFragment);
+            }
+        });
+    }
+
+    @Override
+    public void deleteItem(CartItem cartItem) {
+        shopViewModel.removeItemFromCart(cartItem);
+    }
+
+    @Override
+    public void changeQuantity(CartItem cartItem, int quantity) {
+        shopViewModel.changeQuantity(cartItem, quantity);
     }
 }

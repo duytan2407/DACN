@@ -54,7 +54,7 @@
             app:layout_constraintTop_toBottomOf="@+id/productNameTextView"
             />
 
-        <Spinner
+        <TextView
             android:id="@+id/quantitySpinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -68,25 +68,25 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             android:setVal="@{cartItem.quantity}"/>
 
-        <ImageButton
-            android:id="@+id/deleteProductButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:padding="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/quantitySpinner"
-            app:layout_constraintStart_toEndOf="@+id/quantitySpinner"
-            app:layout_constraintTop_toTopOf="@+id/quantitySpinner"
-            app:srcCompat="@drawable/ic_baseline_delete_24" />
+<!--        <ImageButton-->
+<!--            android:id="@+id/deleteProductButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:background="?android:attr/selectableItemBackground"-->
+<!--            android:padding="8dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/quantitySpinner"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/quantitySpinner"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/quantitySpinner"-->
+<!--            app:srcCompat="@drawable/ic_baseline_delete_24" />-->
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            app:layout_constraintStart_toEndOf="@+id/deleteProductButton"
+            android:layout_marginLeft="160dp"
+            app:layout_constraintStart_toEndOf="@+id/quantitySpinner"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/productTotalPriceTextView"
