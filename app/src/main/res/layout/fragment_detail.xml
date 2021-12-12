@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="8dp">
+            android:padding="10dp">
                 <ImageView
                     android:id="@+id/productImageView"
                     android:layout_width="280dp"
@@ -127,6 +127,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="@{() -> shopViewModel.addItemToCart(shopViewModel.food)}"
                 android:fontFamily="@font/alfa_slab_one"
                 android:text="+ Quấtt" />
 <!--                android:onClick="@{() -> shopViewModel.addItemToCart(shopViewModel.product)}" -->

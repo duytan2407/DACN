@@ -83,8 +83,9 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:fontFamily="@font/alfa_slab_one"
+                    android:onClick="@{() -> shopInterface.addItem(food)}"
                     android:text="+ Quấtt" />
-                <!--                    android:enabled="@{food.tinhTrang}"-->
+<!--                android:enabled="@{food.tinhTrang}"-->
             </LinearLayout>
 
         </LinearLayout>

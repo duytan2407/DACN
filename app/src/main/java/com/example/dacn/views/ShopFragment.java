@@ -59,7 +59,9 @@ public class ShopFragment extends Fragment implements ShopListAdapter.ShopInterf
 
     @Override
     public void addItem(Food food) {
-
+//        Log.d(TAG, "add: " + food.toString());
+//        Log.d(TAG, "addItem: " + food.getTenMonAn() + isAdded());
+        boolean isAdded = shopViewModel.addItemToCart(food);
     }
 
     @Override
