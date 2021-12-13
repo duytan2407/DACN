@@ -44,15 +44,16 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="8dp"
                         android:layout_weight="8"
-                        android:text="Nguyen A"
+                        android:text=""
+                        android:hint="Họ tên"
                         android:textSize="18sp" />
                 </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dip"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@color/black" />
+<!--                <View-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="1dip"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    android:layout_marginBottom="8dp"-->
+<!--                    android:background="@color/black" />-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -70,15 +71,16 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="8dp"
                         android:layout_weight="8"
-                        android:text="0123456789"
+                        android:text=""
+                        android:hint="SĐT"
                         android:textSize="18sp" />
                 </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dip"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@color/black" />
+<!--                <View-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="1dip"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    android:layout_marginBottom="8dp"-->
+<!--                    android:background="@color/black" />-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -88,13 +90,13 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:layout_weight="1"
+                        android:layout_weight="0.7"
                         android:src="@drawable/ic_baseline_date_range_24" />
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="8dp"
+                        android:layout_marginLeft="11dp"
                         android:layout_weight="3"
                         android:text="Ngày giao"
                         android:textSize="18sp" />
@@ -133,7 +135,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:layout_weight="1"
+                        android:layout_weight="0.7"
                         android:src="@drawable/ic_baseline_location_on_24" />
                     <EditText
                         android:id="@+id/txtAddress"
@@ -142,7 +144,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="8dp"
                         android:layout_weight="9"
-                        android:text="425 Điện Biên Phủ"
+                        android:text=""
                         android:textSize="18sp" />
                 </LinearLayout>
 <!--                <View-->
@@ -187,6 +189,14 @@
                     android:layout_height="wrap_content"
                     android:buttonTint="@color/blue_zalo"
                     android:text="Thanh toán qua thẻ" />
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:src="@drawable/iconmethodcredit"/>-->
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:src="@drawable/iconmethodcod"/>-->
             </RadioGroup>
         </androidx.cardview.widget.CardView>
         <LinearLayout
