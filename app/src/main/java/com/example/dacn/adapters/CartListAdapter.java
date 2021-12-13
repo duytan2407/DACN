@@ -41,7 +41,7 @@ public class CartListAdapter extends ListAdapter<CartItem, CartListAdapter.CartV
         public CartVH(@NonNull CartRowBinding cartRowBinding){
             super(cartRowBinding.getRoot());
             this.cartRowBinding = cartRowBinding;
-            cartRowBinding.deleteProductButton.setOnClickListener(new View.OnClickListener() {
+            cartRowBinding.deleteFoodButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     cartInterface.deleteItem(getItem(getAdapterPosition()));
