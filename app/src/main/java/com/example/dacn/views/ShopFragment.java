@@ -9,11 +9,14 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.DividerItemDecoration;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.dacn.R;
 import com.example.dacn.adapters.ShopListAdapter;
@@ -47,6 +50,7 @@ public class ShopFragment extends Fragment implements ShopListAdapter.ShopInterf
 
         shopListAdapter = new ShopListAdapter(this);
         fragmentShopBinding.shopRecyclerView.setAdapter(shopListAdapter);
+        fragmentShopBinding.shopRecyclerView.addItemDecoration(new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL));
 
         shopViewModel = new ViewModelProvider(requireActivity()).get(ShopViewModel.class);
         shopViewModel.getFoods().observe(getViewLifecycleOwner(), new Observer<List<Food>>() {
@@ -55,6 +59,7 @@ public class ShopFragment extends Fragment implements ShopListAdapter.ShopInterf
                 shopListAdapter.submitList(foods);
             }
         });
+
         navController = Navigation.findNavController(view);
     }
 
@@ -78,7 +83,6 @@ public class ShopFragment extends Fragment implements ShopListAdapter.ShopInterf
                     .show();
         }
     }
-
     @Override
     public void onItemClick(Food food) {
 //        Log.d(TAG, "onItemClick: " + food.toString());

@@ -104,15 +104,16 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="11dp"
-                        android:layout_weight="3"
-                        android:text="Thời gian"
+                        android:layout_weight="4"
+
+                        android:text="Thời gian giao"
                         android:textSize="18sp" />
 
                     <EditText
                         android:id="@+id/edtDate"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="9"
+                        android:layout_weight="7.5"
                         android:hint="Chọn ngày"
                         android:inputType="none" />
                 </LinearLayout>

@@ -88,7 +88,6 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
 
         shopViewModel = new ViewModelProvider(requireActivity()).get(ShopViewModel.class);
         shopViewModel.getCart().observe(getViewLifecycleOwner(), new Observer<List<CartItem>>() {
-
             @Override
             public void onChanged(List<CartItem> cartItems) {
                 cartListAdapter.submitList(cartItems);

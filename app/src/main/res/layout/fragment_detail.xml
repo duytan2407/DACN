@@ -87,11 +87,12 @@
                     android:textColor="@color/colorRed"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
                 <TextView
-                    android:id="@+id/AmountTextView"
+                    android:id="@+id/StatusTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.98"
-                    android:text="@{String.valueOf(shopViewModel.food.tinhTrang)}"
+                    android:text="@{shopViewModel.food.tinhTrang ? `Vẫn còn` : `Đã hết`}"
+                    android:textColor="@{shopViewModel.food.tinhTrang ? @color/g1 : @color/red}"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
             </LinearLayout>
 

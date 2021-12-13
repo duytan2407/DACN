@@ -14,7 +14,7 @@ import java.util.Objects;
 public class Food implements Serializable {
     private String TenMonAn;
 
-    private Integer TinhTrang;
+    private boolean TinhTrang;
 
     private String TTChiTiet;
 
@@ -27,13 +27,13 @@ public class Food implements Serializable {
     public Food() {
     }
 
-    public Food(String tenMonAn, Integer tinhTrang, String TTChiTiet, String id, String hinhAnh, Double gia) {
-        this.TenMonAn = tenMonAn;
-        this.TinhTrang = tinhTrang;
+    public Food(String tenMonAn, boolean tinhTrang, String TTChiTiet, String id, String hinhAnh, Double gia) {
+        TenMonAn = tenMonAn;
+        TinhTrang = tinhTrang;
         this.TTChiTiet = TTChiTiet;
         this.id = id;
-        this.HinhAnh = hinhAnh;
-        this.Gia = gia;
+        HinhAnh = hinhAnh;
+        Gia = gia;
     }
 
     public String getTenMonAn ()
@@ -77,11 +77,11 @@ public class Food implements Serializable {
         this.HinhAnh = HinhAnh;
     }
 
-    public Integer getTinhTrang() {
+    public boolean isTinhTrang() {
         return TinhTrang;
     }
 
-    public void setTinhTrang(Integer tinhTrang) {
+    public void setTinhTrang(boolean tinhTrang) {
         TinhTrang = tinhTrang;
     }
 
@@ -105,7 +105,7 @@ public class Food implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Food food = (Food) o;
-        return getTenMonAn().equals(food.getTenMonAn()) && getTinhTrang().equals(food.getTinhTrang()) && getTTChiTiet().equals(food.getTTChiTiet()) && getId().equals(food.getId()) && getHinhAnh().equals(food.getHinhAnh()) && getGia().equals(food.getGia());
+        return isTinhTrang() == food.isTinhTrang() && getTenMonAn().equals(food.getTenMonAn()) && getTTChiTiet().equals(food.getTTChiTiet()) && getId().equals(food.getId()) && getHinhAnh().equals(food.getHinhAnh()) && getGia().equals(food.getGia());
     }
 
     public static DiffUtil.ItemCallback<Food> itemCallback = new DiffUtil.ItemCallback<Food>() {

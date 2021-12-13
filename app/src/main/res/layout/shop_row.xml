@@ -68,12 +68,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="5dp"
-                    android:text="@{String.valueOf(food.tinhTrang)}"
-
-                    android:textColor="@color/black"
+                    android:text="@{food.tinhTrang ? `` : `Đã hết`}"
+                    android:textColor="@{food.tinhTrang ? @color/g1 : @color/red}"
                     android:textSize="15dp" />
-<!--                ? `` : `Đã hết`}"-->
-
+                android:textColor="@color/black"-->
                 <Button
                     android:id="@+id/addToCartButton"
                     android:layout_width="wrap_content"
@@ -83,9 +81,10 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:fontFamily="@font/alfa_slab_one"
+                    android:enabled="@{food.tinhTrang}"
                     android:onClick="@{() -> shopInterface.addItem(food)}"
                     android:text="+ Quấtt" />
-<!--                android:enabled="@{food.tinhTrang}"-->
+
             </LinearLayout>
 
         </LinearLayout>
