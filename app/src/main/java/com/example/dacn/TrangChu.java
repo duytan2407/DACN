@@ -22,11 +22,11 @@ public class TrangChu extends AppCompatActivity {
         Bundle bundleReceive = getIntent().getExtras();
         if(bundleReceive !=null)
         {
-//            NguoiDungModel user = (NguoiDungModel) bundleReceive.get("Object User");
-//            if( user != null)
-//            {
-//
-//            }
+            NguoiDungModel user = (NguoiDungModel) bundleReceive.get("Object User");
+            if( user != null)
+            {
+
+            }
         }
     }
     private void getDataIntent()

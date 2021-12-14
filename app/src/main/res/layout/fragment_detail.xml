@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/holo_orange_light"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="shopViewModel"
+            type="com.example.dacn.viewmodels.ShopViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.ProductDetailFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+                <ImageView
+                    android:id="@+id/productImageView"
+                    android:layout_width="280dp"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center"
+                    android:foodImage="@{shopViewModel.food.hinhAnh}"
+                    android:scaleType="fitXY" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+<!--                <TextView-->
+<!--                    android:layout_width="0px"-->
+<!--                    android:layout_weight="0.3"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Tên món:"-->
+<!--                    android:textColor="@android:color/holo_red_dark"-->
+<!--                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />-->
+                <TextView
+                    android:id="@+id/productNameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/bungee"
+                    android:text="@{shopViewModel.food.tenMonAn}"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+                <TextView
+                    android:layout_width="0px"
+                    android:layout_weight="0.09"
+                    android:layout_height="wrap_content"
+                    android:text="Giá:"
+                    android:textColor="@color/colorRed"
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+                <TextView
+                    android:id="@+id/priceTextView"
+                    android:layout_width="0px"
+                    android:layout_weight="0.91"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:text="@{`$`+ String.valueOf(shopViewModel.food.gia)}"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+            </LinearLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="4dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tình trạng:"
+                    android:textStyle="bold"
+                    android:layout_weight="0.02"
+                    android:textColor="@color/colorRed"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+                <TextView
+                    android:id="@+id/StatusTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.98"
+                    android:text="@{shopViewModel.food.tinhTrang ? `Vẫn còn` : `Đã hết`}"
+                    android:textColor="@{shopViewModel.food.tinhTrang ? @color/g1 : @color/red}"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thông tin chi tiết:"
+                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/colorRed" />
+
+            <TextView
+                android:id="@+id/DetailTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="@{`*** `+ String.valueOf(shopViewModel.food.TTChiTiet)}"
+                android:textColor="@color/black"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="4dp" />
+
+<!--            <Button-->
+<!--                android:id="@+id/addToCartButton"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center"-->
+<!--                android:onClick="@{() -> shopViewModel.addItemToCart(shopViewModel.food)}"-->
+<!--                android:fontFamily="@font/alfa_slab_one"-->
+<!--                android:text="+ Quấtt" />-->
+<!--                android:onClick="@{() -> shopViewModel.addItemToCart(shopViewModel.product)}" -->
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

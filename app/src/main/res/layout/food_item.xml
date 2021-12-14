@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/orange"
+    android:background="@android:color/holo_orange_light"
     android:orientation="horizontal">
 
     <LinearLayout
@@ -44,8 +44,20 @@
             android:textColor="@color/white"
             android:layout_marginLeft="10dp"
             android:text="40,000đ" />
+        <TextView
+            android:id="@+id/txtFoodStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:text="@{food.tinhTrang}"
+
+            android:textColor="@color/black"
+            android:textSize="15dp" />
         <Button
             android:id="@+id/btnBuyFood"
+            android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
