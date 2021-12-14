@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DACN">
         <activity
-            android:name=".TestOTp"
+            android:name=".MapGPS"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
@@ -33,7 +33,7 @@
             android:name=".TrangChu"
             android:exported="true" />
         <activity
-            android:name=".MapGPS"
+            android:name=".TestOTp"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

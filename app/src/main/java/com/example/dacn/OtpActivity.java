@@ -40,12 +40,16 @@ public class OtpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp);
+        //
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
+        //
         setTitleToolbar();
         initUi();
         getDataIntent();
+        //
         mAuth = FirebaseAuth.getInstance();
+        //
         btnSendOtpCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,6 +61,7 @@ public class OtpActivity extends AppCompatActivity {
         tvSendOtpAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 onClickSendAgain();
             }
         });

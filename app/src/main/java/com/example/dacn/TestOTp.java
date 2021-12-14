@@ -38,9 +38,13 @@ public class TestOTp extends AppCompatActivity {
         setContentView(R.layout.activity_test_otp);
         setTitleToolbar();
         initUi();
+        //full man hinh
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
+        //mAuth
         mAuth = FirebaseAuth.getInstance();
+
+
         btnVerifyNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

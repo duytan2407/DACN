@@ -23,6 +23,7 @@
         <entry key="..\:/IT/Android/DACN/app/src/main/res/layout/activity_trang_chu.xml" value="0.33" />
         <entry key="..\:/IT/Android/DACN/app/src/main/res/layout/food_item.xml" value="0.36666666666666664" />
         <entry key="..\:/IT/Android/DACN/app/src/main/res/layout/food_item2.xml" value="0.36666666666666664" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_contact.xml" value="0.2536231884057971" />
         <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_dang_ky.xml" value="0.4" />
         <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_dang_nhap.xml" value="0.10400000000000001" />
         <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_dang_nhap_face.xml" value="0.2259963768115942" />
@@ -38,6 +39,8 @@
         <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_thuc_don.xml" value="0.20833333333333334" />
         <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_trang_chu.xml" value="0.20833333333333334" />
         <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/content_login_face.xml" value="0.22146739130434784" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/fragment_first.xml" value="0.13020833333333334" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/fragment_second.xml" value="0.13020833333333334" />
       </map>
     </option>
   </component>
