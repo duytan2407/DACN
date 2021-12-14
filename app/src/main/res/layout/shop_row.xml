@@ -70,7 +70,7 @@
                     android:layout_marginTop="5dp"
                     android:textStyle="bold"
                     android:text="@{food.tinhTrang ? `` : `Đã hết`}"
-                    android:textColor="@{food.tinhTrang ? @color/g1 : @color/red}"
+                    android:textColor="@{food.tinhTrang ? @color/g1 : @android:color/holo_red_dark}"
                     android:textSize="15dp" />
                 android:textColor="@color/black"-->
                 <Button
