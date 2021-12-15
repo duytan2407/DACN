@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DACN">
         <activity
+            android:name=".KhuyenMai"
+            android:exported="false" />
+        <activity
             android:name=".DonHang"
             android:exported="false" />
         <activity
