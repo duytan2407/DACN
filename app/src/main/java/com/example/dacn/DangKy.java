@@ -13,9 +13,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.dacn.API.ApiClient;
+
+import com.example.dacn.API.Model.ApiClient;
+import com.example.dacn.API.Model.User;
 import com.example.dacn.Utils.HashMD5;
-import com.example.dacn.modelclass.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -55,6 +56,7 @@ public class DangKy extends AppCompatActivity {
         edtEmail = findViewById(R.id.inputEmail);
         edtsdt = findViewById(R.id.inputSDT);
         btnRegister = findViewById(R.id.btnRegister);
+
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,7 +129,8 @@ public class DangKy extends AppCompatActivity {
     }
 
     private void doRegitster(String name, String pass, String strPhoneNumber, String email) {
-        User user = new User("",pass,strPhoneNumber,name,email);
+//        User user = new User("",pass,strPhoneNumber,name,email);
+        User user = new User("",name,strPhoneNumber,"",email,"",pass,"","","user");
         ApiClient.apiclient.getregister(user).enqueue(new Callback<List<User>>() {
             @Override
             public void onResponse(Call<List<User>> call, Response<List<User>> response) {

@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dacn.API.Model.ApiClient;
+import com.example.dacn.API.Model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -24,13 +26,17 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class OtpActivity extends AppCompatActivity {
         private EditText edtOtp;
         private Button btnSendOtpCode;
         private TextView tvSendOtpAgain;
-
         private  String mPhoneNumber;
         private  String mVerification;
         public static final String TAG =  OtpActivity.class.getName();
@@ -48,6 +54,8 @@ public class OtpActivity extends AppCompatActivity {
         initUi();
         getDataIntent();
         //
+
+        //
         mAuth = FirebaseAuth.getInstance();
         //
         btnSendOtpCode.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +63,7 @@ public class OtpActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String strOtp = edtOtp.getText().toString().trim();
                 onClickOtpCode(strOtp);
+                OnClickOTP();
             }
         });
 
@@ -67,6 +76,27 @@ public class OtpActivity extends AppCompatActivity {
         });
 
     }
+
+    private void OnClickOTP() {
+        String otp = edtOtp.getText().toString().trim();
+        doOTP(otp);
+    }
+
+    private void doOTP(String otp) {
+//        User user = new User("","","","","","","",otp,"","");
+//        ApiClient.apiclient.getregister(user).enqueue(new Callback<List<User>>() {
+//            @Override
+//            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+//                Toast.makeText(OtpActivity.this, "Dang Ky Thanh Cong", Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<User>> call, Throwable t) {
+//                Toast.makeText(OtpActivity.this, "Thanh Cong", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+    }
+
     private void getDataIntent()
     {
         mPhoneNumber = getIntent().getStringExtra("phone number");
