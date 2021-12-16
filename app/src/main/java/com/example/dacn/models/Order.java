@@ -1,7 +1,9 @@
 package com.example.dacn.models;
 
+import java.sql.Date;
+
 public class Order {
-    private String tongtien;
+    private Double tongtien;
 
     private String diachi;
 
@@ -21,10 +23,12 @@ public class Order {
 
     private String hoten;
 
+    private String ngaytao;
+
     public Order() {
     }
 
-    public Order(String tongtien, String diachi, String sdt, String iduser, String ngaygiao, String trangthai, String giogiao, String phuongthucthanhtoan, String id, String hoten) {
+    public Order(Double tongtien, String diachi, String sdt, String iduser, String ngaygiao, String trangthai, String giogiao, String phuongthucthanhtoan, String id, String hoten, String ngaytao) {
         this.tongtien = tongtien;
         this.diachi = diachi;
         this.sdt = sdt;
@@ -35,14 +39,22 @@ public class Order {
         this.phuongthucthanhtoan = phuongthucthanhtoan;
         this.id = id;
         this.hoten = hoten;
+        this.ngaytao = ngaytao;
     }
 
+    public String getNgaytao() {
+        return ngaytao;
+    }
 
-    public String getTongtien() {
+    public void setNgaytao(String ngaytao) {
+        this.ngaytao = ngaytao;
+    }
+
+    public Double getTongtien() {
         return tongtien;
     }
 
-    public void setTongtien(String tongtien) {
+    public void setTongtien(Double tongtien) {
         this.tongtien = tongtien;
     }
 
@@ -139,6 +151,6 @@ public class Order {
     @Override
     public String toString()
     {
-        return "ClassPojo [tongtien = "+tongtien+", diachi = "+diachi+", sdt = "+sdt+", iduser = "+iduser+", ngaygiao = "+ngaygiao+", trangthai = "+trangthai+", giogiao = "+giogiao+", phuongthucthanhtoan = "+phuongthucthanhtoan+", id = "+id+", hoten = "+hoten+"]";
+        return "ClassPojo [tongtien = "+tongtien+", diachi = "+diachi+", sdt = "+sdt+", iduser = "+iduser+", ngaygiao = "+ngaygiao+", trangthai = "+trangthai+", giogiao = "+giogiao+", phuongthucthanhtoan = "+phuongthucthanhtoan+", id = "+id+", hoten = "+hoten+" , ngaytao = "+ngaytao+"]";
     }
 }

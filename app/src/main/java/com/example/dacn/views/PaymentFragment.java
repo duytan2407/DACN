@@ -63,6 +63,7 @@ import com.example.dacn.viewmodels.ShopViewModel;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -85,10 +86,13 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
     HashMap<String, String> paramsHash;
 
     Button payNowButton;
-    EditText paymentTotalTextView;
+    TextView paymentTotalTextView;
     RadioButton rb1, rb2;
     EditText edtDate, edtTime, txtName, txtPhone,txtAddress;
-    String total;
+    Double total;
+    Date current;
+    String sdf;
+
     public PaymentFragment() {
         // Required empty public constructor
     }
@@ -126,7 +130,7 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
 
         rb1 = (RadioButton) getView().findViewById(R.id.radioButton);
         rb2 = (RadioButton) getView().findViewById(R.id.radioButton2);
-        paymentTotalTextView=(EditText) getView().findViewById(R.id.paymentTotalTextView);
+        paymentTotalTextView=(TextView) getView().findViewById(R.id.paymentTotalTextView);
         payNowButton=(Button) getView().findViewById(R.id.payNowButton);
         edtTime = (EditText) getView().findViewById(R.id.edtTime);
         edtDate = (EditText) getView().findViewById(R.id.edtDate);
@@ -155,7 +159,7 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
             public void onDateSet(DatePicker view, int year, int month, int day) {
                 month = month + 1;
 //                Log.d("date", "onDateSet: " + month + "/" + day + "/" + year );
-                    edtDate.setText(day + "/" + month + "/" + year);
+                    edtDate.setText(day+ "/" + month + "/" + year);
             }
         };
 
@@ -175,23 +179,22 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
                 dialog.show();
             }
         });
-
         fragmentPaymentBinding.payNowButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rb1.isChecked()) {
-//                    Double b = 1.5;
-//                    total = String.valueOf(b);
-                    Double b = Double.valueOf(paymentTotalTextView.getText().toString());
-                    total = String.valueOf(b);
-                    Log.d("TAG", "onClick: " + total);
+                new getToken().execute();
+                total = Double.valueOf(paymentTotalTextView.getText().toString());
+                current = Calendar.getInstance().getTime();
+                sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(current);
 
+                if (rb1.isChecked()) {
+                    Log.d("TAG", "onClick: " + sdf);
                     shopViewModel.resetCart();
-                    createOrder();
+                    createOrderCode();
                     navController.navigate(R.id.action_paymentFragment_to_orderFragment);
                 } else if (rb2.isChecked()) {
-                    new getToken().execute();
-//                    submitPayment();
+                    createOrderCard();
+                    submitPayment();
                 } else if(!rb1.isChecked() && !rb2.isChecked())
                     Toast.makeText(getActivity(), "Vui lòng chọn phương thức thanh toán", Toast.LENGTH_SHORT).show();
             }
@@ -210,9 +213,24 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
 
     }
 
-    public void createOrder(){
+    public void createOrderCode(){
         Methods methods = getRetrofit().create(Methods.class);
-        Call<Order> call = methods.createOrder(new Order(total,txtAddress.getText().toString(),txtPhone.getText().toString(),"1",edtDate.getText().toString(),"",edtTime.getText().toString(),"1","",txtName.getText().toString()));
+        Call<Order> call = methods.createOrder(new Order(total, txtAddress.getText().toString(),txtPhone.getText().toString(),"1",edtDate.getText().toString(),"",edtTime.getText().toString(),"1","",txtName.getText().toString(), sdf));
+        call.enqueue(new Callback<Order>() {
+            @Override
+            public void onResponse(Call<Order> call, retrofit2.Response<Order> response) {
+                Log.v("log","Success");
+            }
+
+            @Override
+            public void onFailure(Call<Order> call, Throwable t) {
+                Log.v("log", t.getMessage());
+            }
+        });
+    }
+    public void createOrderCard(){
+        Methods methods = getRetrofit().create(Methods.class);
+        Call<Order> call = methods.createOrder(new Order(total,txtAddress.getText().toString(),txtPhone.getText().toString(),"1",edtDate.getText().toString(),"",edtTime.getText().toString(),"2","",txtName.getText().toString(), sdf));
         call.enqueue(new Callback<Order>() {
             @Override
             public void onResponse(Call<Order> call, retrofit2.Response<Order> response) {

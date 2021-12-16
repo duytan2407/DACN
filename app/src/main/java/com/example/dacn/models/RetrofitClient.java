@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
     private static Retrofit retrofit;
-//    private static String Base_Url = "https://json-api-demooooo.herokuapp.com/";
+    //    private static String Base_Url = "https://json-api-demooooo.herokuapp.com/";
     private static String Base_Url = "http://10.0.2.2:5000";
     public static Retrofit getRetrofit(){
         if (retrofit == null){

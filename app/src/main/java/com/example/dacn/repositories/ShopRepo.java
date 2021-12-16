@@ -33,10 +33,10 @@ public class ShopRepo {
         call.enqueue(new Callback<List<Food>>() {
             @Override
             public void onResponse(Call<List<Food>> call, Response<List<Food>> response) {
-//                List<Product> data = response.body();
-//                for(Product dt : data){
+//                List<Food> data = response.body();
+//                for(Food dt : data) {
 //                    Log.v("log:", data.getId());
-                Log.d("log", "onResponse: Success");
+//                    Log.d("log", "onResponse: Success");
 //                }
                 mutableFoodList.setValue(response.body());
             }
