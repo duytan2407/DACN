@@ -82,7 +82,7 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
     private DatePickerDialog.OnDateSetListener mDateSetListener;
     private TimePickerDialog.OnTimeSetListener mTimeSetListener;
 
-    String token, amount;
+    String token, amount, payValue;
     HashMap<String, String> paramsHash;
 
     Button payNowButton;
@@ -91,7 +91,7 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
     EditText edtDate, edtTime, txtName, txtPhone,txtAddress;
     Double total;
     Date current;
-    String sdf;
+    String sdfCurrent, Date, Time;
 
     public PaymentFragment() {
         // Required empty public constructor
@@ -158,8 +158,7 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
             @Override
             public void onDateSet(DatePicker view, int year, int month, int day) {
                 month = month + 1;
-//                Log.d("date", "onDateSet: " + month + "/" + day + "/" + year );
-                    edtDate.setText(day+ "/" + month + "/" + year);
+                    edtDate.setText(year + "/" + month + "/" + day);
             }
         };
 
@@ -182,17 +181,19 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
         fragmentPaymentBinding.payNowButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new getToken().execute();
                 total = Double.valueOf(paymentTotalTextView.getText().toString());
                 current = Calendar.getInstance().getTime();
-                sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(current);
+                sdfCurrent = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(current);
+                Date = edtDate.getText().toString();
+                Time = edtTime.getText().toString();
 
                 if (rb1.isChecked()) {
-                    Log.d("TAG", "onClick: " + sdf);
+//                    Log.d("TAG", "onClick: " + edtDate.getText().toString());
                     shopViewModel.resetCart();
                     createOrderCode();
                     navController.navigate(R.id.action_paymentFragment_to_orderFragment);
                 } else if (rb2.isChecked()) {
+                    new getToken().execute();
                     createOrderCard();
                     submitPayment();
                 } else if(!rb1.isChecked() && !rb2.isChecked())
@@ -202,7 +203,7 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
     }
 
     public void submitPayment(){
-        String payValue=paymentTotalTextView.getText().toString();
+        payValue = paymentTotalTextView.getText().toString();
         if(!payValue.isEmpty())
         {
             DropInRequest dropInRequest=new DropInRequest().clientToken(token);
@@ -215,7 +216,7 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
 
     public void createOrderCode(){
         Methods methods = getRetrofit().create(Methods.class);
-        Call<Order> call = methods.createOrder(new Order(total, txtAddress.getText().toString(),txtPhone.getText().toString(),"1",edtDate.getText().toString(),"",edtTime.getText().toString(),"1","",txtName.getText().toString(), sdf));
+        Call<Order> call = methods.createOrder(new Order(total, txtAddress.getText().toString(),txtPhone.getText().toString(),"1", Date,"", Time,"1","",txtName.getText().toString(), sdfCurrent));
         call.enqueue(new Callback<Order>() {
             @Override
             public void onResponse(Call<Order> call, retrofit2.Response<Order> response) {
@@ -230,7 +231,7 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
     }
     public void createOrderCard(){
         Methods methods = getRetrofit().create(Methods.class);
-        Call<Order> call = methods.createOrder(new Order(total,txtAddress.getText().toString(),txtPhone.getText().toString(),"1",edtDate.getText().toString(),"",edtTime.getText().toString(),"2","",txtName.getText().toString(), sdf));
+        Call<Order> call = methods.createOrder(new Order(total,txtAddress.getText().toString(),txtPhone.getText().toString(),"1", Date,"", Time,"2","",txtName.getText().toString(), sdfCurrent));
         call.enqueue(new Callback<Order>() {
             @Override
             public void onResponse(Call<Order> call, retrofit2.Response<Order> response) {
