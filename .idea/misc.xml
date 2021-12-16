@@ -39,6 +39,23 @@
         <entry key="..\:/IT/Android/DACN/app/src/main/res/layout/activity_trang_chu.xml" value="0.33" />
         <entry key="..\:/IT/Android/DACN/app/src/main/res/layout/food_item.xml" value="0.36666666666666664" />
         <entry key="..\:/IT/Android/DACN/app/src/main/res/layout/food_item2.xml" value="0.36666666666666664" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_contact.xml" value="0.24048913043478262" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_dang_ky.xml" value="0.12360688956433637" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_dang_nhap.xml" value="0.12360688956433637" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_list_bac.xml" value="0.24048913043478262" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_main.xml" value="0.24048913043478262" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_mon_an.xml" value="0.24048913043478262" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_otp.xml" value="0.12360688956433637" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_test_otp.xml" value="0.12360688956433637" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_thuc_don.xml" value="0.24048913043478262" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_trang_chu.xml" value="0.12360688956433637" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/cart_row.xml" value="0.10052083333333334" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/food_item.xml" value="0.24048913043478262" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/fragment_first.xml" value="0.24048913043478262" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/fragment_second.xml" value="0.24048913043478262" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/menu/bottommenu.xml" value="0.25416666666666665" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/menu/main_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.19270833333333334" />
       </map>
     </option>
   </component>
