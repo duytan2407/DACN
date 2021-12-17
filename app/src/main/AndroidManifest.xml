@@ -10,25 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DACN">
         <activity
-            android:name=".KhuyenMai"
-            android:exported="false" />
-        <activity
-            android:name=".DonHang"
-            android:exported="false" />
-        <activity
-            android:name=".Contact"
-            android:exported="false" />
-        <activity
-            android:name=".MonAn"
+            android:name=".TestOTp"
             android:exported="true" />
         <activity
-            android:name=".ThucDon"
-            android:exported="true" />
-        <activity
-            android:name=".TrangChu"
+            android:name=".DangNhap"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".OtpActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,10 +27,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

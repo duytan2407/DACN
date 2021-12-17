@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import com.example.dacn.API.Model.User;
+
 public class TrangChu extends AppCompatActivity {
 
     @Override
@@ -22,7 +24,7 @@ public class TrangChu extends AppCompatActivity {
         Bundle bundleReceive = getIntent().getExtras();
         if(bundleReceive !=null)
         {
-            NguoiDungModel user = (NguoiDungModel) bundleReceive.get("Object User");
+            User user = (User) bundleReceive.get("Object User");
             if( user != null)
             {
 
