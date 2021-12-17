@@ -8,4 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "DACN"
 include ':app'
-include ':Lib'
+include ':shipperonly'

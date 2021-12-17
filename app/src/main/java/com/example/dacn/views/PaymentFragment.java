@@ -190,7 +190,7 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
                 if (rb1.isChecked()) {
 //                    Log.d("TAG", "onClick: " + edtDate.getText().toString());
                     shopViewModel.resetCart();
-                    createOrderCode();
+                    createOrderCod();
                     navController.navigate(R.id.action_paymentFragment_to_orderFragment);
                 } else if (rb2.isChecked()) {
                     new getToken().execute();
@@ -214,7 +214,7 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
 
     }
 
-    public void createOrderCode(){
+    public void createOrderCod(){
         Methods methods = getRetrofit().create(Methods.class);
         Call<Order> call = methods.createOrder(new Order(total, txtAddress.getText().toString(),txtPhone.getText().toString(),"1", Date,"", Time,"1","",txtName.getText().toString(), sdfCurrent));
         call.enqueue(new Callback<Order>() {
