@@ -34,7 +34,6 @@ android {
 }
 
 dependencies {
-
     implementation 'com.wdullaer:materialdatetimepicker:4.2.0'
     implementation 'com.braintreepayments.api:drop-in:4.1.0'
     implementation 'com.google.code.gson:gson:2.8.9'
@@ -71,4 +70,6 @@ dependencies {
 
     implementation "androidx.navigation:navigation-fragment:2.3.5"
     implementation "androidx.navigation:navigation-ui:2.3.5"
+
+
 }
