@@ -13,6 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DACN"
         android:usesCleartextTraffic="true">
+<!--        <activity-->
+<!--            android:name=".DangKy"-->
+<!--            android:exported="true" />-->
+        <activity
+            android:name=".DangNhap"
+            android:exported="true" />
+        <activity
+            android:name=".MapGPS"
+            android:exported="true" />
         <activity
             android:name=".Delivery"
             android:exported="true" />

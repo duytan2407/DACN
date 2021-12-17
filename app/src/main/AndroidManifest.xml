@@ -17,7 +17,16 @@
             android:name=".DonHang"
             android:exported="false" />
         <activity
+            android:name=".DangNhap"
+            android:exported="false" />
+        <activity
             android:name=".Contact"
+            android:exported="false" />
+        <activity
+            android:name=".DangKy"
+            android:exported="false" />
+        <activity
+            android:name=".TrangChu"
             android:exported="false" />
         <activity
             android:name=".MonAn"
@@ -30,9 +39,8 @@
         </activity>
         <activity
             android:name=".ThucDon"
-            android:exported="true" /> <!-- <activity -->
-        <!-- android:name=".TrangChu" -->
-        <!-- android:exported="true" /> -->
+            android:exported="true" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true" />

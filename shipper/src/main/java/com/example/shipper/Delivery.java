@@ -1,4 +1,4 @@
-package com.example.shipper;
+package com.example.ship;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dacn.API.Methods;
@@ -36,6 +37,7 @@ public class DangNhap extends AppCompatActivity {
     private Button btnregister, btnlogin;
     private List<User> mListUser;
     private User mUser;
+    private TextView tvdangki;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +51,7 @@ public class DangNhap extends AppCompatActivity {
         edtMail = findViewById(R.id.inputEmail);
         edtPassword = findViewById(R.id.inputPassword);
         btnlogin = findViewById(R.id.btnlogin);
+        tvdangki = findViewById(R.id.textViewSignUp);
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,8 +60,17 @@ public class DangNhap extends AppCompatActivity {
                 clickLogin();
             }
         });
-
+        tvdangki.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(DangNhap.this , DangKy.class);
+                startActivity(i);
+            }
+        });
     }
+
+
+
     private void getListUsers()
     {
         ApiClient.apiclient.getListUsers()

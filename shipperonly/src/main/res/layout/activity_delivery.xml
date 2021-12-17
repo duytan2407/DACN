@@ -5,10 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/holo_orange_light"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    android:background="@drawable/hinhnen"
     tools:context=".Delivery">
-    <TextView
-        android:id="@+id/txtAddress"
+<!--    <TextView-->
+<!--        android:id="@+id/txtAddress"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"/>-->
+    <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:id="@+id/et_hientai"
+        android:hint="Nhập Vị Trí Hiện Tại"
+        android:text="127 Dinh Phong Phu Quan 9"
+        android:padding="12dp"
+        android:background="@android:drawable/editbox_background"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_destination"
+        android:hint="Nhập Vị Trí Điểm Đến "
+        android:padding="12dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/editbox_background"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bt_track"
+        android:text="Hiển Thị Theo Dõi"
+        android:layout_marginTop="16dp"/>
+
 </LinearLayout>
