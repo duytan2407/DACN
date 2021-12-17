@@ -7,7 +7,7 @@
     <string name="g_i">Gửi</string>
     <string name="kh_ng_nh_n_c_m">Không Nhận Được Mã?</string>
     <string name="title_activity_login_face">LoginFace</string>
-    <!-- Strings used for fragments for navigation -->
+
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
@@ -17,5 +17,12 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="facebook_app_id">2397236850411077</string>
     <string name="fb_login_protocol_scheme">fb2397236850411077</string>
+    <string-array name="quantity_string_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
 
 </resources>

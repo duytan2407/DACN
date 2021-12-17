@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dacn">
-
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,34 +12,20 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.DACN">
         <activity
-            android:name=".MapGPS"
-            android:exported="true" />
-        <activity
-            android:name=".DangNhap"
-            android:exported="true" />
-        <activity
             android:name=".DonHang"
-            android:exported="false" />
-        <activity
-            android:name=".TrangChu"
             android:exported="false" />
         <activity
             android:name=".Contact"
             android:exported="false" />
         <activity
-            android:name=".OtpActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MonAn"
+            android:name=".TrangChu"
             android:exported="true" />
         <activity
             android:name=".ThucDon"
             android:exported="true" />
+
         <activity
-            android:name=".TestOTp"
-            android:exported="true" />
-        <activity
-            android:name=".DangKy"
+            android:name=".MapGPS"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -53,6 +37,16 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <activity android:name="com.braintreepayments.api.BraintreeBrowserSwitchActivity"
+            android:launchMode="singleTask"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="${applicationId}.braintree" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
