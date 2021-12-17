@@ -158,11 +158,11 @@
             </ImageButton>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="96dp"
                 android:layout_height="22dp"
                 android:layout_gravity="bottom"
-                android:background="@color/white"
                 android:layout_marginLeft="15dp"
+                android:background="@color/white"
                 android:fontFamily="@font/alfa_slab_one"
                 android:text="Món Khác"
                 android:textColor="@color/purple_700"
