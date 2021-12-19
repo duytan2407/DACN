@@ -158,7 +158,7 @@ public class PaymentFragment extends Fragment implements CartListAdapter.CartInt
             @Override
             public void onDateSet(DatePicker view, int year, int month, int day) {
                 month = month + 1;
-                    edtDate.setText(year + "/" + month + "/" + day);
+                edtDate.setText(year + "/" + month + "/" + day);
             }
         };
 

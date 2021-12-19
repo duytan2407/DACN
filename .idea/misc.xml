@@ -60,10 +60,12 @@
         <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_dang_ky.xml" value="0.12360688956433637" />
         <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_dang_nhap.xml" value="0.12360688956433637" />
         <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_don_hang.xml" value="0.2223731884057971" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_feedback.xml" value="0.25416666666666665" />
         <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_list_bac.xml" value="0.24048913043478262" />
         <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_main.xml" value="0.24048913043478262" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_map_gps.xml" value="0.1431159420289855" />
         <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_mon_an.xml" value="0.24048913043478262" />
-        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_otp.xml" value="0.4" />
+        <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_otp.xml" value="0.264" />
         <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_test_otp.xml" value="0.12360688956433637" />
         <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_thuc_don.xml" value="0.24048913043478262" />
         <entry key="..\:/ThucHanh/DACN/app/src/main/res/layout/activity_trang_chu.xml" value="0.12360688956433637" />

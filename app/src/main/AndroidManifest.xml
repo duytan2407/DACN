@@ -14,13 +14,16 @@
         android:theme="@style/Theme.DACN"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".feedback"
+            android:exported="true" />
+        <activity
             android:name=".DonHang"
             android:exported="false" />
         <activity
-            android:name=".DangNhap"
+            android:name=".MonAn"
             android:exported="false" />
         <activity
-            android:name=".Contact"
+            android:name=".OtpActivity"
             android:exported="false" />
         <activity
             android:name=".DangKy"
@@ -29,7 +32,7 @@
             android:name=".TrangChu"
             android:exported="false" />
         <activity
-            android:name=".MonAn"
+            android:name=".DangNhap"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,7 +43,6 @@
         <activity
             android:name=".ThucDon"
             android:exported="true" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true" />

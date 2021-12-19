@@ -15,7 +15,6 @@ public class RetrofitClient {
         }
         return retrofit;
     }
-
     public static String getBase_Url() {
         return Base_Url;
     }

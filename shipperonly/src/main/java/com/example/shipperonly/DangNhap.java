@@ -144,7 +144,7 @@ public class DangNhap extends AppCompatActivity {
         }
         if(IsHasUser)
         {
-            Intent intent = new Intent(DangNhap.this,DonHang.class);
+            Intent intent = new Intent(DangNhap.this,Shipper.class);
             Bundle bundle = new Bundle();
             bundle.putSerializable("Object User",mUser);
             intent.putExtras(bundle);
